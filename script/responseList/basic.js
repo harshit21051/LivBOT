@@ -5,15 +5,13 @@ import * as math from './math.js';
 // test() function checks whether a given string matches a pattern or not
 
 export function responseList(filter, responseBox) {
-    // general commands
     if (/hello/.test(filter))
         responseBox.innerHTML += "Hi there! \uD83D\uDE42";
 
-    else if (/hi/.test(filter))
+    else if (/hi/.test(filter) || /hey/.test(filter))
         responseBox.innerHTML += "Hello! \uD83D\uDE42";
 
     else if (/how are you/.test(filter))
-    
         responseBox.innerHTML += "I'm doing well, thank you! \uD83D\uDE42";
 
     else if ((/your/.test(filter) && /name/.test(filter)) || (/who/.test(filter) && /are/.test(filter) && /you/.test(filter)))
