@@ -1,5 +1,6 @@
 # LivBOT
- It is a voice-based chat bot which can interact with users and provide information.
+
+LivBOT is a voice-based chatbot designed to engage with users and offer valuable information. Its functionality resembles that of popular voice assistants such as Siri, Alexa, and Cortana. LivBOT is equipped with a vast knowledge base that enables it to respond to a wide range of common inquiries frequently posed to these voice assistants. With its interactive and intuitive nature, LivBOT provides an enhanced user experience, ensuring seamless communication and accurate responses.
 
 Tech stack used:
   -  HTML
