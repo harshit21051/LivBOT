@@ -29,3 +29,11 @@ LivBOT is equipped with an array of features to cater to user needs and interest
   -  Play games: Engage users with interactive games for entertainment and recreation.
   -  Open links: Navigate to specified URLs or webpages for quick access to online resources.
   -  Play songs: Stream and play music based on user requests.
+
+Getting Started
+  -  Clone or download the repository to your local machine.
+  -  Open the command prompt or terminal.
+  -  Navigate to the project directory.
+  -  Start a local web server by running the following command: python -m http.server
+  -  Open any web browser and go to http://localhost:8000.
+  -  The LivBOT chatbot will be launched and ready to use.
