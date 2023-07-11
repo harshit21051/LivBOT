@@ -36,7 +36,9 @@ LivBOT is equipped with an array of features to cater to user needs and interest
   -  Open the command prompt or terminal.
   -  Navigate to the project directory.
   -  Start a local web server by running the following command:
+
       ```shell
       python -m http.server
+      
   -  Open any web browser and go to http://localhost:8000.
   -  The LivBOT chatbot will be launched and ready to use.
