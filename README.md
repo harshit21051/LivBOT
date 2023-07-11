@@ -1,24 +1,31 @@
 # LivBOT
 
-LivBOT is a voice-based chatbot designed to engage with users and offer valuable information. Its functionality resembles that of popular voice assistants such as Siri, Alexa, and Cortana. LivBOT is equipped with a vast knowledge base that enables it to respond to a wide range of common inquiries frequently posed to these voice assistants. With its interactive and intuitive nature, LivBOT provides an enhanced user experience, ensuring seamless communication and accurate responses.
+LivBOT is a voice-based chatbot designed to provide valuable information and engage with users. It offers a range of functionalities similar to popular voice assistants like Siri, Alexa, and Cortana. With a vast knowledge base and interactive nature, LivBOT aims to deliver an enhanced user experience by enabling seamless communication and providing accurate responses.
 
 Tech stack used:
   -  HTML
   -  CSS
   -  JavaScript
-  -  APIs:
-      -  Dictionary API : to get word meanings
-      -  Unsplash API   : to get images
+
+APIs used:
+
+LivBOT integrates the following APIs to offer its functionalities:
+
+  -  Dictionary API: Fetches word meanings to provide users with definitions and explanations.
+  -  Unsplash API: Retrieves images to enhance the visual experience during interactions.
 
 Functionalities:
-  1.  Crack jokes
-  2.  Share interesting facts
-  3.  Get puzzles
-  4.  Perform math calculations
-  5.  Convert units
-  6.  Search for anything
-  7.  Generate images
-  8.  Get word meanings
-  9.  Play games
-  10. Open links
-  11. Play songs
+
+LivBOT is equipped with an array of features to cater to user needs and interests:
+
+  -  Crack jokes: Lighten the mood and bring laughter with a collection of jokes.
+  -  Share interesting facts: Provide users with intriguing and educational facts.
+  -  Get puzzles: Challenge users with puzzles and engage their problem-solving skills.
+  -  Perform math calculations: Execute various mathematical calculations and equations.
+  -  Convert units: Convert measurements, currencies, or other units based on user input.
+  -  Search for anything: Retrieve information and search results on a wide range of topics.
+  -  Generate images: Display relevant images based on user queries or predefined keywords.
+  -  Get word meanings: Offer definitions and explanations for queried words using the Dictionary API.
+  -  Play games: Engage users with interactive games for entertainment and recreation.
+  -  Open links: Navigate to specified URLs or webpages for quick access to online resources.
+  -  Play songs: Stream and play music based on user requests.
