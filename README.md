@@ -30,7 +30,8 @@ LivBOT is equipped with an array of features to cater to user needs and interest
   -  Open links: Navigate to specified URLs or webpages for quick access to online resources.
   -  Play songs: Stream and play music based on user requests.
 
-Getting Started
+## Getting Started
+
   -  Clone or download the repository to your local machine.
   -  Open the command prompt or terminal.
   -  Navigate to the project directory.
