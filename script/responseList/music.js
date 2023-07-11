@@ -66,21 +66,24 @@ export function responseList(filter, responseBox) {
 
     else if (musicMode) {
         if (/start/.test(filter)) {
+            const match = filter.match(/start\s+(\d+)/);
+            if (match) currentSongIndex = (parseInt(match[1]) - 1) % data.songs.length;
+            audio.src = data.songs[currentSongIndex];
             playMusic();
             const musicName = data.songs[currentSongIndex].split('/').pop().split('.').slice(0, -1).join('.');
             responseBox.innerHTML += `Playing music:<br>${musicName}`;
         }
-        
+
         else if (/pause/.test(filter)) {
             pauseMusic();
             responseBox.innerHTML += 'Paused music';
         }
-        
+
         else if (/stop/.test(filter)) {
             stopMusic();
             responseBox.innerHTML += 'Stopped music';
         }
-        
+
         else if (/next/.test(filter)) {
             playNextSong();
             const musicName = data.songs[currentSongIndex].split('/').pop().split('.').slice(0, -1).join('.');
@@ -92,12 +95,12 @@ export function responseList(filter, responseBox) {
             const musicName = data.songs[currentSongIndex].split('/').pop().split('.').slice(0, -1).join('.');
             responseBox.innerHTML += `Playing music:<br>${musicName}`;
         }
-        
+
         else if (/forward/.test(filter)) {
             skipForward();
             responseBox.innerHTML += 'Skipped forward by 10 seconds';
         }
-        
+
         else if (/backward/.test(filter)) {
             skipBackward();
             responseBox.innerHTML += 'Skipped backward by 10 seconds';
@@ -110,7 +113,7 @@ export function responseList(filter, responseBox) {
                 responseBox.innerHTML += `${i + 1}. ${song}<br><br>`;
             }
         }
-        
+
         else game.responseList(filter, responseBox);
     }
 
