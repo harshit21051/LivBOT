@@ -7,14 +7,14 @@ Tech stack used:
   -  CSS
   -  JavaScript
 
-APIs used:
+## APIs used:
 
 LivBOT integrates the following APIs to offer its functionalities:
 
   -  Dictionary API: Fetches word meanings to provide users with definitions and explanations.
   -  Unsplash API: Retrieves images to enhance the visual experience during interactions.
 
-Functionalities:
+## Functionalities:
 
 LivBOT is equipped with an array of features to cater to user needs and interests:
 
