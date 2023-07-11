@@ -22,7 +22,7 @@ LivBOT is equipped with an array of features to cater to user needs and interest
   -  Share interesting facts: Provide users with intriguing and educational facts.
   -  Get puzzles: Challenge users with puzzles and engage their problem-solving skills.
   -  Perform math calculations: Execute various mathematical calculations and equations.
-  -  Convert units: Convert measurements, currencies, or other units based on user input.
+  -  Convert units: Convert measurement units based on user input.
   -  Search for anything: Retrieve information and search results on a wide range of topics.
   -  Generate images: Display relevant images based on user queries or predefined keywords.
   -  Get word meanings: Offer definitions and explanations for queried words using the Dictionary API.
