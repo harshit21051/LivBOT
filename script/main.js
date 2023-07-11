@@ -150,7 +150,7 @@ function giveResponse(message) {
     const filter = message.toLowerCase().replace(/[.?!,]/g, '');
 
     // clear the screen
-    if (filter.includes("cls") || filter.includes("clear") || filter.includes("clearscreen"))
+    if (filter.includes("cls") || filter.includes("clearscreen"))
         return chatContent.innerHTML = '';
 
     // ignore user message
