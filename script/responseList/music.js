@@ -67,8 +67,10 @@ export function responseList(filter, responseBox) {
     else if (musicMode) {
         if (/start/.test(filter)) {
             const match = filter.match(/start\s+(\d+)/);
-            if (match) currentSongIndex = (parseInt(match[1]) - 1) % data.songs.length;
-            audio.src = data.songs[currentSongIndex];
+            if (match) {
+                currentSongIndex = (parseInt(match[1]) - 1) % data.songs.length;
+                audio.src = data.songs[currentSongIndex];
+            }
             playMusic();
             const musicName = data.songs[currentSongIndex].split('/').pop().split('.').slice(0, -1).join('.');
             responseBox.innerHTML += `Playing music:<br>${musicName}`;
