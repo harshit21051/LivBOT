@@ -147,7 +147,7 @@ function giveResponse(message) {
     responseBox.className = "msg response";
 
     // Remove certain characters from the user's input
-    const filter = message.toLowerCase().replace(/[.?!,]/g, '');
+    const filter = message.toLowerCase().replace(/[?!,]/g, '');
 
     // clear the screen
     if (filter.includes("cls") || filter.includes("clearscreen"))

@@ -97,7 +97,7 @@ function evaluateExpression(expression) {
 // Function to sort numbers
 function sortNumbers(numbers) {
     if (numbers && numbers.length >= 2) {
-        const sortedNumbers = numbers.map(num => parseInt(num)).sort((a, b) => a - b);
+        const sortedNumbers = numbers.map(num => parseFloat(num)).sort((a, b) => a - b);
         return sortedNumbers.join(' ');
     }
     else return "Sorry, I couldn't find two or more numbers to perform the sorting.";
@@ -106,7 +106,7 @@ function sortNumbers(numbers) {
 // Function to calculate the median
 function calculateMedian(numbers) {
     if (numbers && numbers.length >= 2) {
-        const sortedNumbers = numbers.map(num => parseInt(num)).sort((a, b) => a - b);
+        const sortedNumbers = numbers.map(num => parseFloat(num)).sort((a, b) => a - b);
         const length = sortedNumbers.length;
         let median;
 
@@ -143,9 +143,9 @@ export function responseList(filter, responseBox) {
 
     // sum of n numbers given as an input
     else if (/sum|\+/.test(filter)) {
-        const sumNumbers = filter.match(/\d+/g);
+        const sumNumbers = filter.match(/\d+(\.\d+)?/g);
         if (sumNumbers && sumNumbers.length >= 2) {
-            const sum = sumNumbers.reduce((acc, num) => acc + parseInt(num), 0);
+            const sum = sumNumbers.reduce((acc, num) => acc + parseFloat(num), 0);
             responseBox.textContent = `${sumNumbers.join(' + ')} = ${sum}`;
         }
         else responseBox.textContent = "Sorry, I couldn't find two or more numbers to perform the sum.";
@@ -153,9 +153,9 @@ export function responseList(filter, responseBox) {
 
     // product of n numbers given as an input
     else if (/prod|\*/.test(filter)) {
-        const prodNumbers = filter.match(/\d+/g);
+        const prodNumbers = filter.match(/\d+(\.\d+)?/g);
         if (prodNumbers && prodNumbers.length >= 2) {
-            const product = prodNumbers.reduce((acc, num) => acc * parseInt(num), 1);
+            const product = prodNumbers.reduce((acc, num) => acc * parseFloat(num), 1);
             responseBox.textContent = `${prodNumbers.join(' * ')} = ${product}`;
         }
         else responseBox.textContent = "Sorry, I couldn't find two or more numbers to perform the product.";
@@ -163,9 +163,9 @@ export function responseList(filter, responseBox) {
 
     // average of n numbers given as an input
     else if (/avg|average/.test(filter)) {
-        const avgNumbers = filter.match(/\d+/g);
+        const avgNumbers = filter.match(/\d+(\.\d+)?/g);
         if (avgNumbers && avgNumbers.length >= 2) {
-            const sum = avgNumbers.reduce((acc, num) => acc + parseInt(num), 0);
+            const sum = avgNumbers.reduce((acc, num) => acc + parseFloat(num), 0);
             const average = sum / avgNumbers.length;
             responseBox.textContent = `Average = ${average}`;
         }
@@ -174,23 +174,23 @@ export function responseList(filter, responseBox) {
 
     // Sort n numbers
     else if (/sort/.test(filter)) {
-        const numbers = filter.match(/\d+/g);
+        const numbers = filter.match(/\d+(\.\d+)?/g);
         const result = sortNumbers(numbers);
         responseBox.textContent = `Sorted numbers: ${result}`;
     }
 
     // Median of n numbers
     else if (/median/.test(filter)) {
-        const numbers = filter.match(/\d+/g);
+        const numbers = filter.match(/\d+(\.\d+)?/g);
         const result = calculateMedian(numbers);
         responseBox.textContent = `Median: ${result}`;
     }
 
     // get min from n numbers
     else if (/min/.test(filter)) {
-        const numbers = filter.match(/\d+/g);
+        const numbers = filter.match(/\d+(\.\d+)?/g);
         if (numbers && numbers.length >= 1) {
-            const minNumber = Math.min(...numbers.map(num => parseInt(num)));
+            const minNumber = Math.min(...numbers.map(num => parseFloat(num)));
             responseBox.textContent = `Minimum number is ${minNumber}`;
         }
         else responseBox.textContent = "Sorry, I couldn't find any numbers to determine the minimum.";
@@ -198,9 +198,9 @@ export function responseList(filter, responseBox) {
 
     // get max from n numbers
     else if (/max/.test(filter)) {
-        const numbers = filter.match(/\d+/g);
+        const numbers = filter.match(/\d+(\.\d+)?/g);
         if (numbers && numbers.length >= 1) {
-            const maxNumber = Math.max(...numbers.map(num => parseInt(num)));
+            const maxNumber = Math.max(...numbers.map(num => parseFloat(num)));
             responseBox.textContent = `Maximum number is ${maxNumber}`;
         }
         else responseBox.textContent = "Sorry, I couldn't find any numbers to determine the maximum.";
