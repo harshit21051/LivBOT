@@ -231,29 +231,5 @@ export function responseList(filter, responseBox) {
         else responseBox.textContent = 'Please provide a query.';
     }
 
-    // get last request given by user
-    else if (/last/.test(filter)) {
-        const requestItems = document.querySelectorAll('.request');
-        let lastNonLastRequestItem = null;
-
-        // Loop through the request items in reverse order
-        for (let i = requestItems.length - 1; i >= 0; i--) {
-            const requestItem = requestItems[i];
-            const requestContent = requestItem.textContent;
-
-            if (!/last/.test(requestContent)) {
-                lastNonLastRequestItem = requestItem;
-                break;
-            }
-        }
-
-        if (lastNonLastRequestItem) {
-            const lastNonLastRequestContent = lastNonLastRequestItem.textContent;
-            responseBox.innerHTML += `${lastNonLastRequestContent}<br>`;
-        }
-
-        else responseBox.innerHTML += 'No previous requests found.<br>';
-    }
-
     else basic.responseList(filter, responseBox);
 }

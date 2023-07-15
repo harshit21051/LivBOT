@@ -157,6 +157,46 @@ function giveResponse(message) {
     else if (filter.includes("not respond") || filter.includes("okay") || filter.includes("done"))
         return;
 
+    // again respond to prev request or get the last request
+    if (filter === "again" || filter === "last") {
+        const requestItems = document.querySelectorAll('.request');
+        let lastNonFilterItem = null;
+    
+        // Loop through the request items in reverse order
+        for (let i = requestItems.length - 1; i >= 0; i--) {
+            const requestItem = requestItems[i];
+            const requestContent = requestItem.textContent;
+    
+            if ((filter === "again" && !requestContent.includes('again')) ||
+                (filter === "last" && !/last/.test(requestContent))) {
+                lastNonFilterItem = requestItem;
+                break;
+            }
+        }
+    
+        if (lastNonFilterItem) {
+            const lastNonFilterContent = lastNonFilterItem.textContent;
+            if (filter === "again") {
+
+                // check if last request is mute
+                if (lastNonFilterContent == "mute") {
+                    isMuted = !isMuted;
+                    if (isMuted) {
+                        // Stop the speech if it's currently speaking
+                        if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+                        responseBox.innerHTML += 'Voice muted';
+                    }
+                    else responseBox.innerHTML += 'Voice unmuted';
+                }
+
+                // else go to next .js file
+                else functional.responseList(lastNonFilterContent, responseBox);
+            }
+            else responseBox.innerHTML += `${lastNonFilterContent}<br>`;
+        }
+        else responseBox.innerHTML += 'No previous requests found.<br>';
+    }
+
     // mute/unmute voice
     else if (filter == "mute") {
         isMuted = !isMuted;
@@ -168,29 +208,7 @@ function giveResponse(message) {
         else responseBox.innerHTML += 'Voice unmuted';
     }
 
-    // again respond to previous request
-    else if (filter === "again") {
-        const requestItems = document.querySelectorAll('.request');
-        let lastNonAgainItem = null;
-
-        // Loop through the request items in reverse order
-        for (let i = requestItems.length - 1; i >= 0; i--) {
-            const requestItem = requestItems[i];
-            if (!requestItem.textContent.includes('again')) {
-                lastNonAgainItem = requestItem;
-                break;
-            }
-        }
-
-        if (lastNonAgainItem) {
-            const lastFilter = lastNonAgainItem.textContent;
-            functional.responseList(lastFilter, responseBox);
-        }
-
-        else responseBox.innerHTML += 'No previous requests found.';
-    }
-
-    // ele go to response list
+    // else go to response list
     else functional.responseList(filter, responseBox);
     
     // respond after 700 ms
