@@ -39,24 +39,23 @@ function getCategory(unit) {
 
 export function responseList(filter, responseBox) {
     if (/convert/.test(filter)) {
-        const conversionRegex = /convert\s+(\d+)\s*([a-z]+)\s+into\s+([a-z]+)/i;
+        const conversionRegex = /convert\s+(\d+(\.\d+)?)\s*([a-z]+)\s+into\s+([a-z]+)/i;
         const matches = filter.match(conversionRegex);
 
-        if (matches && matches.length === 4) {
+        if (matches && matches.length === 5) {
             const value = parseFloat(matches[1]);
-            const fromUnit = matches[2].toLowerCase();
-            const toUnit = matches[3].toLowerCase();
+            const fromUnit = matches[3].toLowerCase();
+            const toUnit = matches[4].toLowerCase();
 
             const result = convertUnit(value, fromUnit, toUnit);
 
             if (result !== undefined)
                 responseBox.textContent = `${value} ${fromUnit} = ${result} ${toUnit}`;
-
             else responseBox.textContent = 'Invalid conversion!';
         }
-
+        
         else responseBox.textContent = 'Invalid conversion format!';
     }
-
+    
     else responseBox.innerHTML += "Sorry, I didn't understand that. Please try again!";
 }
